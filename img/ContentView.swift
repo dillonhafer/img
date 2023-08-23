@@ -95,13 +95,13 @@ struct InputImageView: View {
       if self.image != nil {
         Image(nsImage: self.image!)
           .resizable()
-          .aspectRatio(contentMode: .fit)
+          .aspectRatio(contentMode: .fill)
       } else {
         Text("Drag and drop image file")
           .frame(width: 320)
       }
     }
-    .frame(height: 320)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.black.opacity(0.5))
     .cornerRadius(8)
 
